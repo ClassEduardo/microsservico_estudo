@@ -12,13 +12,16 @@ import com.example.microsservico_estudo.application.interfaces.ICadastrarAlunoSe
 import com.example.microsservico_estudo.domain.entities.Aluno;
 
 @RestController
-@RequestMapping("/alunos")
+@RequestMapping("/api/alunos")
 public class AlunoController {
+
     final private ICadastrarAlunoService service;
 
     public AlunoController(ICadastrarAlunoService service) {
         this.service = service;
-    };
+    }
+
+    ;
 
     @PostMapping
     public Aluno Cadastrar(@RequestBody Aluno aluno) {
@@ -26,7 +29,7 @@ public class AlunoController {
     }
 
     @GetMapping
-    public List<Aluno> Obter(){
+    public List<Aluno> Obter() {
         return service.Listar();
     }
 }
