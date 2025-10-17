@@ -1,4 +1,4 @@
-package com.example.IntegrandoBancos.infrastructure.data.security.util;
+package com.example.microsservico_estudo.infrastructure.data.security.util;
 
 import java.security.Key;
 import java.util.Date;

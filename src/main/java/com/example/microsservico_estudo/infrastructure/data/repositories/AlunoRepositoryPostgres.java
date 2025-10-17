@@ -1,14 +1,14 @@
-package com.example.IntegrandoBancos.infrastructure.data.repositories;
+package com.example.microsservico_estudo.infrastructure.data.repositories;
 
 import java.util.List;
 import java.util.function.Function;
 
 import org.springframework.stereotype.Repository;
 
-import com.example.IntegrandoBancos.domain.entities.Aluno;
-import com.example.IntegrandoBancos.domain.interfaces.IAlunoRepository;
-import com.example.IntegrandoBancos.infrastructure.data.interfaces.IAlunoJpaRepository;
-import com.example.IntegrandoBancos.infrastructure.data.model.AlunoEntity;
+import com.example.microsservico_estudo.domain.entities.Aluno;
+import com.example.microsservico_estudo.domain.interfaces.IAlunoRepository;
+import com.example.microsservico_estudo.infrastructure.data.interfaces.IAlunoJpaRepository;
+import com.example.microsservico_estudo.infrastructure.data.model.AlunoEntity;
 
 
 @Repository

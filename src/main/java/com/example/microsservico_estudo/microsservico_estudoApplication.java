@@ -1,13 +1,13 @@
-package com.example.IntegrandoBancos;
+package com.example.microsservico_estudo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class IntegrandoBancosApplication {
+public class microsservico_estudoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(IntegrandoBancosApplication.class, args);
+		SpringApplication.run(microsservico_estudoApplication.class, args);
 	}
 
 }

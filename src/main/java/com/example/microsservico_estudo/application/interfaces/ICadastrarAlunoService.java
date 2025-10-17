@@ -1,8 +1,8 @@
-package com.example.IntegrandoBancos.application.interfaces;
+package com.example.microsservico_estudo.application.interfaces;
 
 import java.util.List;
 
-import com.example.IntegrandoBancos.domain.entities.Aluno;
+import com.example.microsservico_estudo.domain.entities.Aluno;
 
 public interface ICadastrarAlunoService {
     Aluno Executar(Aluno aluno);

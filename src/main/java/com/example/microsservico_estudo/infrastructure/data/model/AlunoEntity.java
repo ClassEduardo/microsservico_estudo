@@ -1,4 +1,4 @@
-package com.example.IntegrandoBancos.infrastructure.data.model;
+package com.example.microsservico_estudo.infrastructure.data.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

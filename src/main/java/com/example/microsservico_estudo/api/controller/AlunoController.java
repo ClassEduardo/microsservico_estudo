@@ -1,4 +1,4 @@
-package com.example.IntegrandoBancos.api.controller;
+package com.example.microsservico_estudo.api.controller;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.IntegrandoBancos.application.interfaces.ICadastrarAlunoService;
-import com.example.IntegrandoBancos.domain.entities.Aluno;
+import com.example.microsservico_estudo.application.interfaces.ICadastrarAlunoService;
+import com.example.microsservico_estudo.domain.entities.Aluno;
 
 @RestController
 @RequestMapping("/alunos")

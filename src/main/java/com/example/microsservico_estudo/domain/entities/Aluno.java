@@ -1,4 +1,4 @@
-package com.example.IntegrandoBancos.domain.entities;
+package com.example.microsservico_estudo.domain.entities;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
