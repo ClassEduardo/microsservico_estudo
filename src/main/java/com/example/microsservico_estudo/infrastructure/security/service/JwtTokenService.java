@@ -15,18 +15,19 @@ import io.jsonwebtoken.security.Keys;
 
 @Component
 public class JwtTokenService implements ITokenService {
+
     @Value("$jwt.secret")
     private String secret;
 
     @Value("${jwt.expiration:86400000}")
     private long expiration;
 
-    private Key getSigningKey(){
-        return Keys.hmacShaKeyFor(secret.getBytes()); 
+    private Key getSigningKey() {
+        return Keys.hmacShaKeyFor(secret.getBytes());
     }
 
     @Override
-    public String generateToken(String username){
+    public String generateToken(String username) {
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
@@ -40,13 +41,12 @@ public class JwtTokenService implements ITokenService {
         return extractClaims(token).getSubject();
     }
 
-    
     @Override
     public boolean validateToken(String token, String username) {
         try {
             return extractUsername(token).equals(username) && !isTokenExpired(token);
         } catch (Exception e) {
-            return false;    
+            return false;
         }
     }
 
