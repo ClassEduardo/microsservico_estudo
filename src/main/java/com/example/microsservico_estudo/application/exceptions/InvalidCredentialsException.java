@@ -1,4 +1,4 @@
-package com.example.microsservico_estudo.application;
+package com.example.microsservico_estudo.application.exceptions;
 
 public class InvalidCredentialsException extends RuntimeException {
 

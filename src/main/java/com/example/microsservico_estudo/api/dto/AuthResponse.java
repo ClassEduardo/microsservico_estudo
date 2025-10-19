@@ -2,8 +2,8 @@ package com.example.microsservico_estudo.api.dto;
 
 public class AuthResponse {
 
-    private String token;
-    private String type;
+    private final String token;
+    private final String type;
 
     public AuthResponse(String token, String type) {
         this.token = token;

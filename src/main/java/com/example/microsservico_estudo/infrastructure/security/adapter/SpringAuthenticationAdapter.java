@@ -3,11 +3,12 @@ package com.example.microsservico_estudo.infrastructure.security.adapter;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 
-import com.example.microsservico_estudo.domain.interfaces.IAuthenticationService;
+import com.example.microsservico_estudo.domain.ports.IAuthenticationPorts;
 
 
-public class SpringAuthenticationAdapter implements IAuthenticationService {
+public class SpringAuthenticationAdapter implements IAuthenticationPorts {
     private final AuthenticationManager authenticationManager;
 
     public SpringAuthenticationAdapter(AuthenticationManager authenticationManager) {
@@ -22,10 +23,8 @@ public class SpringAuthenticationAdapter implements IAuthenticationService {
             );
 
             return auth.isAuthenticated();
-        } catch (Exception e) {
+        } catch (AuthenticationException e) {
             return false;
         }
     }
-    
-    
 }

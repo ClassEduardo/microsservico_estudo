@@ -2,6 +2,7 @@ package com.example.microsservico_estudo.infrastructure.security.filter;
 
 import java.io.IOException;
 
+import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -15,8 +16,9 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@Component
+@Component 
 public class JwtAuthFilter extends OncePerRequestFilter {
+
     private final ITokenService tokenService;
 
     public JwtAuthFilter(ITokenService tokenService) {
@@ -25,24 +27,24 @@ public class JwtAuthFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(
-        HttpServletRequest request, 
-        HttpServletResponse response, 
-        FilterChain chain) 
+        @NonNull HttpServletRequest request,
+        @NonNull HttpServletResponse response,
+        @NonNull FilterChain chain)
         throws ServletException, IOException {
-            
+
         String authHeader = request.getHeader("Authorization");
         String token = null;
         String username = null;
 
-        if(authHeader != null && authHeader.startsWith("Bearer ")){
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
             token = authHeader.substring(7);
             username = tokenService.extractUsername(token);
         }
 
-        if(username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-            if(tokenService.validateToken(token, username)) {
-                UsernamePasswordAuthenticationToken authToken = 
-                    new UsernamePasswordAuthenticationToken(username, null, null);
+        if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+            if (tokenService.validateToken(token, username)) {
+                UsernamePasswordAuthenticationToken authToken
+                        = new UsernamePasswordAuthenticationToken(username, null, null);
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }

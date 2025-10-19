@@ -29,10 +29,10 @@ public class JwtTokenService implements ITokenService {
     @Override
     public String generateToken(String username) {
         return Jwts.builder()
-                .setSubject(username)
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + expiration))
-                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .setSubject(username) // Quem é o usuário
+                .setIssuedAt(new Date()) // Quando foi criado o token
+                .setExpiration(new Date(System.currentTimeMillis() + expiration)) // Quando expira
+                .signWith(getSigningKey(), SignatureAlgorithm.HS256) // Assina com chave secrete
                 .compact();
     }
 
