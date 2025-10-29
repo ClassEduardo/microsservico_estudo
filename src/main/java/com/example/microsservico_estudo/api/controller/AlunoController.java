@@ -2,6 +2,7 @@ package com.example.microsservico_estudo.api.controller;
 
 import java.util.List;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +29,8 @@ public class AlunoController {
         return service.Executar(aluno);
     }
 
+    //Utilizado para testes sem precisar de token de acesso
+    @PreAuthorize("permitAll()")
     @GetMapping
     public List<Aluno> Obter() {
         return service.Listar();
