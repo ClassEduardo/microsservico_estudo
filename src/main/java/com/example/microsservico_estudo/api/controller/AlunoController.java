@@ -22,8 +22,6 @@ public class AlunoController {
         this.service = service;
     }
 
-    ;
-
     @PostMapping
     public Aluno Cadastrar(@RequestBody Aluno aluno) {
         return service.Executar(aluno);
